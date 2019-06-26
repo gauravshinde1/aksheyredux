@@ -1,25 +1,23 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import RecipeList from './Component/RecipeList';
+import { Provider } from 'react-redux';
+
+import store from './store/store';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Provider store={ store }>
+      <React.Fragment>
+        <div className="container-fluid text-center">
+          <div class="row">
+            <h1 className="col-12">Recipe app</h1>
+            <RecipeList/>
+          </div>
+        </div>
+      </React.Fragment>
+    </Provider>
   );
 }
 
